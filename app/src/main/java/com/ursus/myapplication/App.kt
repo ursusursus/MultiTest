@@ -2,6 +2,9 @@ package com.ursus.myapplication
 
 import android.app.Application
 import com.ursus.core.di.AppComponentProvider
+import com.ursus.core.di.ContextModule
+import com.ursus.myapplication.di.AppComponent
+import com.ursus.myapplication.di.DaggerAppComponent
 
 /**
  * Created by Vlastimil Brečka (www.vlastimilbrecka.sk)
@@ -9,15 +12,19 @@ import com.ursus.core.di.AppComponentProvider
  */
 class App : Application(), AppComponentProvider {
 
-    private lateinit var _appComponent: AppComponent
+    private val appComponent by lazy<AppComponent> {
+        DaggerAppComponent
+            .builder()
+            .contextModule(ContextModule(this))
+            .build()
+    }
 
     override fun onCreate() {
         super.onCreate()
-        _appComponent = AppComponent(this)
     }
 
     @Suppress("UNCHECKED_CAST")
     override fun <T> appComponent(): T {
-        return _appComponent as T
+        return appComponent as T
     }
 }

@@ -1,5 +1,6 @@
 apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
+apply plugin: "kotlin-kapt"
 
 android {
     compileSdkVersion 28
@@ -23,6 +24,8 @@ dependencies {
     implementation deps.kotlin
     implementation deps.appcompat
     implementation deps.material
+    implementation deps.dagger.dagger
+    kapt deps.dagger.compiler
     implementation "com.jakewharton.rxrelay2:rxrelay:2.1.0"
     implementation "io.reactivex.rxjava2:rxjava:2.2.4"
     implementation "io.reactivex.rxjava2:rxandroid:2.1.0"

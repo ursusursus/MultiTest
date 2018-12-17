@@ -12,13 +12,19 @@ import androidx.appcompat.app.AppCompatActivity
 import com.ursus.core.CallService
 import com.ursus.feature1.BarFragment
 import com.ursus.feature2.FooFragment
+import com.ursus.myapplication.di.AppComponent
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
+
+    @Inject lateinit var bar: Bar
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("Default", "MainActivity # onCreate=${foo()}")
+        (applicationContext as App).appComponent<AppComponent>().inject(this)
+
+        Log.d("Default", "MainActivity # onCreate=$bar")
         setContentView(R.layout.activity_main)
 
         val textView = findViewById<TextView>(R.id.textView)
@@ -39,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                 .commit()
         }
 
-        (applicationContext as App).appComponent<AppComponent>().notifHelper.showMissedCallNotification()
+//        (applicationContext as App).appComponent<AppComponent>().notifHelper.showMissedCallNotification()
 
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 //            Log.d("Default", "starting service")
