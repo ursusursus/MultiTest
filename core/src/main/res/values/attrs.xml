@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TintableView">
+        <attr name="tintColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="ForegroundView">
+        <attr name="android:foreground"/>
+    </declare-styleable>
+
+    <declare-styleable name="ErrorView">
+        <attr name="errorViewDrawableColor" format="color"/>
+        <attr name="errorViewTextColor" format="color"/>
+        <attr name="errorViewActionColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="RatingView">
+        <attr name="ratingViewColorOn" format="color"/>
+        <attr name="ratingViewColorOff" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="BookItem">
+        <attr name="bookTitleTextColor" format="color"/>
+        <attr name="bookSubtitleTextColor" format="color"/>
+        <attr name="bookRatingColor" format="color"/>
+        <attr name="bookImagePlaceholder" format="reference"/>
+        <attr name="bookImagePlaceholder_Empty" format="reference"/>
+        <attr name="bookImagePlaceholder_Error" format="reference"/>
+        <attr name="bookPlaceholderTextColor" format="color"/>
+        <attr name="headerColor" format="color"/>
+
+        <attr name="bookImagePlaceholder_circle" format="reference"/>
+        <attr name="bookImagePlaceholder_circle_Empty" format="reference"/>
+        <attr name="bookImagePlaceholder_circle_Error" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="PlayerLayout">
+        <attr name="drawsCustomStatusBar" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="Reader">
+        <attr name="readerToolbarStyle" format="reference"/>
+        <attr name="readerPageProgressBarOverlay" format="reference"/>
+        <attr name="bottomPanelColor" format="color"/>
+        <attr name="bottomPanelColor.Secondary" format="color"/>
+        <attr name="settingsSegmentedStyle" format="reference"/>
+        <attr name="bookMetaBackgroundColor" format="color"/>
+        <attr name="bookMetaTextColor" format="color"/>
+        <attr name="bookMetaTextColor.Secondary" format="color"/>
+        <attr name="bookMetaToolbarStyle" format="color"/>
+        <attr name="bookMetaTabsStyle" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="ReaderSegmentedView">
+        <attr name="selectedColor" format="color"/>
+        <attr name="unselectedBackgroundColor" format="color"/>
+        <attr name="unselectedTextColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="Review">
+        <attr name="reviewItemTitleTextColor" format="color"/>
+        <attr name="reviewItemTextColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="SquareDrawee">
+        <attr name="accordingTo" format="enum">
+            <enum name="width" value="0"/>
+            <enum name="height" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="MaxMediaView">
+        <attr name="android:maxHeight"/>
+    </declare-styleable>
+</resources>

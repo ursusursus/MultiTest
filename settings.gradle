@@ -1,0 +1,4 @@
+include ":app", ":core", ":feature1", ":feature2", ":sharedlib1"
+
+project(":feature1").projectDir = new File("features/feature1")
+project(":feature2").projectDir = new File("features/feature2")

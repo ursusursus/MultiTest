@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Colors -->
+    <color name="brown">#5f524a</color>
+    <color name="brown_a00">#005f524a</color>
+    <color name="brown_a10">#225f524a</color>
+    <color name="brown_a60">#995f524a</color>
+    <color name="brown_faded">#f8f4e7</color>
+    <color name="brown_faded_darker">#dedcd2</color>
+    <color name="brown_faded2_darker">#E8E5DB</color>
+    <color name="brown_faded3_darker">#dedcd2</color>
+    <color name="brown_lighter">#7C6C61</color>
+    <color name="brown_middle">#564B43</color>
+    <color name="brown_darker">#4A403A</color>
+    <color name="brown_redish">#974E00</color>
+    <color name="brown_redish_a">#33974E00</color>
+    <color name="beige">#DFCEB6</color>
+    <color name="beige2">#c8b9a3</color>
+    <color name="gold">#FFC168</color>
+    <color name="gold_a">#20FFC168</color>
+    <color name="gold_a10">#22FFC168</color>
+    <color name="gold_a20">#66FFC168</color>
+    <color name="gold_a80">#CCFFC168</color>
+    <color name="sepia">#F2EDE6</color>
+    <color name="sepia_darker">#c7c3be</color>
+    <color name="sepia_dark">#1a0f01</color>
+    <color name="sepia_dark_2">#995907</color>
+    <color name="sunset_red">#a88984</color>
+    <color name="sunset_red_darker">#8a716d</color>
+    <color name="sunset_red_dark">#351611</color>
+
+    <color name="apple_red">#9c4f35</color>
+    <color name="husk_green">#9c7b34</color>
+    <color name="apple_green">#6f7b34</color>
+    <color name="hippie_blue">#6f7b60</color>
+    <color name="blue_violet">#6f4e60</color>
+    <color name="fuchsia_pink">#9c4e60</color>
+
+    <color name="facebook_blue">#3b5998</color>
+    <color name="blue_a20">#330B397E</color>
+    <color name="blue_a60">#990B397E</color>
+    <color name="blue_darker">#08295A</color>
+    <color name="blue_faded">#446699</color>
+    <color name="blue_faded2">#99a6b6</color>
+
+    <color name="red">#DD2C00</color>
+    <color name="red2">#F78181</color>
+    <color name="green">#3ADF00</color>
+    <color name="yellow">#F7D358</color>
+
+    <color name="purple">#642EFE</color>
+    <color name="purple_a">#CF642EFE</color>
+    <color name="purple_a50">#99642EFE</color>
+    <color name="yellow_a">#CAF7D358</color>
+    <color name="yellow_a33">#66F7D358</color>
+
+    <!-- Grayscale -->
+    <color name="white">#FFFFFF</color>
+    <color name="white_a80">#CCFFFFFF</color>
+    <color name="white_a70">#AAFFFFFF</color>
+    <color name="white_a60">#99FFFFFF</color>
+    <color name="white_a55">#88FFFFFF</color>
+    <color name="white_a45">#77FFFFFF</color>
+    <color name="white_a30">#55FFFFFF</color>
+    <color name="white_a20">#40FFFFFF</color>
+    <color name="white_a10">#22FFFFFF</color>
+    <color name="white_a05">#11FFFFFF</color>
+    <color name="white_a00">#00FFFFFF</color>
+
+    <color name="black">#000000</color>
+    <color name="black_00">#00000000</color>
+    <color name="black_a80">#CC000000</color>
+    <color name="black_a70">#AA000000</color>
+    <color name="black_a60">#88000000</color>
+    <color name="black_a50">#77000000</color>
+    <color name="black_a30">#55000000</color>
+    <color name="black_a20">#33000000</color>
+    <color name="black_a10">#22000000</color>
+
+    <color name="gray_50">#FAFAFA</color>
+    <color name="gray_100">#F5F5F5</color>
+    <color name="gray_200">#EEEEEE</color>
+    <color name="gray_300">#E0E0E0</color>
+    <color name="gray_400">#BDBDBD</color>
+    <color name="gray_500">#9E9E9E</color>
+    <color name="gray_600">#757575</color>
+    <color name="gray_700">#616161</color>
+    <color name="gray_800">#424242</color>
+    <color name="gray_900">#212121</color>
+    <color name="gray_950">#101010</color>
+
+    <color name="gray_400_on_brown_faded">#CBC8BD</color>
+
+</resources>
