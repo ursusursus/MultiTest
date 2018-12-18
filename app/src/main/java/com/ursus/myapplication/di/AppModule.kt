@@ -1,15 +1,20 @@
 package com.ursus.myapplication.di
 
-import com.ursus.myapplication.Bar
+import com.ursus.core.CallButtonsReceiver
+import com.ursus.core.CallService
+import com.ursus.feature1.BarFragment
+import com.ursus.myapplication.MainActivity
 import dagger.Module
-import dagger.Provides
+import dagger.android.ContributesAndroidInjector
 
 /**
  * Created by Vlastimil Brečka (www.vlastimilbrecka.sk)
- * on 17.12.2018.
+ * on 18.12.2018.
  */
 @Module
-object AppModule {
-    @Provides @JvmStatic
-    fun bar(): Bar = Bar(1)
+abstract class AppModule {
+    @ContributesAndroidInjector abstract fun contributeActivityInjector(): MainActivity
+    @ContributesAndroidInjector abstract fun contributesServiceInjector(): CallService
+    @ContributesAndroidInjector abstract fun contributesServiceInjector2(): BarFragment
+    @ContributesAndroidInjector abstract fun contributesServiceInjector3(): CallButtonsReceiver
 }

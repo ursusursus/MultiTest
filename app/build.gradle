@@ -4,7 +4,6 @@ apply plugin: "kotlin-kapt"
 
 android {
     compileSdkVersion compileSdk
-    buildToolsVersion buildTools
 
     defaultConfig {
         applicationId "com.ursus.myapplication"

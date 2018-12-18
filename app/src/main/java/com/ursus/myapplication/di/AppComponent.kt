@@ -2,12 +2,13 @@ package com.ursus.myapplication.di
 
 import android.app.Application
 import com.ursus.core.di.CoreModule
-import com.ursus.feature2.di.BarModule
+import com.ursus.feature2.di.QuaxModule
 import com.ursus.myapplication.App
 import com.ursus.sharedlib1.di.FooModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
+import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 /**
@@ -18,11 +19,12 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AndroidInjectionModule::class,
-        MyApplicationModule::class,
+        AndroidSupportInjectionModule::class,
         AppModule::class,
+        BarModule::class,
         CoreModule::class,
         FooModule::class,
-        BarModule::class
+        QuaxModule::class
     ]
 )
 interface AppComponent {

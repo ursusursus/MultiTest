@@ -1,6 +1,6 @@
-package com.ursus.feature2.di
+package com.ursus.myapplication.di
 
-import com.ursus.feature2.Quax
+import com.ursus.myapplication.Bar
 import dagger.Module
 import dagger.Provides
 
@@ -11,5 +11,5 @@ import dagger.Provides
 @Module
 object BarModule {
     @Provides @JvmStatic
-    fun quax() = Quax()
+    fun bar(): Bar = Bar(1)
 }
