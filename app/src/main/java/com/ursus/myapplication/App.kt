@@ -1,30 +1,31 @@
 package com.ursus.myapplication
 
 import android.app.Application
-import com.ursus.core.di.AppComponentProvider
 import com.ursus.core.di.ContextModule
 import com.ursus.myapplication.di.AppComponent
 import com.ursus.myapplication.di.DaggerAppComponent
+import dagger.android.HasActivityInjector
+import dagger.android.HasServiceInjector
+import dagger.android.support.HasSupportFragmentInjector
 
 /**
  * Created by Vlastimil Brečka (www.vlastimilbrecka.sk)
  * on 16.12.2018.
  */
-class App : Application(), AppComponentProvider {
+class App : Application(), HasActivityInjector, HasServiceInjector, HasSupportFragmentInjector {
 
-    private val appComponent by lazy<AppComponent> {
-        DaggerAppComponent
+    private lateinit var appComponent: AppComponent
+
+    override fun onCreate() {
+        super.onCreate()
+
+        appComponent = DaggerAppComponent
             .builder()
             .contextModule(ContextModule(this))
             .build()
     }
 
-    override fun onCreate() {
-        super.onCreate()
-    }
-
-    @Suppress("UNCHECKED_CAST")
-    override fun <T> appComponent(): T {
-        return appComponent as T
-    }
+    override fun activityInjector() = appComponent.activityInjector
+    override fun serviceInjector() = appComponent.serviceInjector
+    override fun supportFragmentInjector() = appComponent.fragmentInjector
 }

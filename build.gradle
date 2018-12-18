@@ -8,9 +8,6 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:3.2.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
-
-        // NOTE: Do not place your application config here; they belong
-        // in the individual module build.gradle files
     }
 }
 
@@ -21,7 +18,7 @@ allprojects {
     }
 
     afterEvaluate {
-        def kapt = extensions.findByName('kapt')
+        def kapt = extensions.findByName("kapt")
         if (kapt != null) {
             kapt.arguments {
                 arg("dagger.formatGeneratedSource", "disabled")

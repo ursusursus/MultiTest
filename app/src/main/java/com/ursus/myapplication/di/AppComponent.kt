@@ -1,10 +1,14 @@
 package com.ursus.myapplication.di
 
+import android.app.Activity
+import android.app.Service
+import androidx.fragment.app.Fragment
 import com.ursus.core.di.ContextModule
 import com.ursus.core.di.CoreModule
 import com.ursus.feature2.di.BarModule
-import com.ursus.myapplication.MainActivity
 import dagger.Component
+import dagger.android.AndroidInjectionModule
+import dagger.android.DispatchingAndroidInjector
 import javax.inject.Singleton
 
 /**
@@ -14,6 +18,8 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [
+        AndroidInjectionModule::class,
+        MyApplicationModule::class,
         AppModule::class,
         CoreModule::class,
         com.ursus.sharedlib1.di.AppModule::class,
@@ -21,9 +27,10 @@ import javax.inject.Singleton
         BarModule::class
     ]
 )
-interface AppComponent :
-    com.ursus.core.di.AppComponent,
-    com.ursus.sharedlib1.di.AppComponent {
+interface AppComponent {
+    val activityInjector: DispatchingAndroidInjector<Activity>
+    val serviceInjector: DispatchingAndroidInjector<Service>
+    val fragmentInjector: DispatchingAndroidInjector<Fragment>
 
-    fun inject(activity: MainActivity)
+
 }

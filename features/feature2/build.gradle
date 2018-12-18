@@ -26,8 +26,12 @@ dependencies {
     implementation deps.kotlin
     implementation deps.appcompat
     implementation deps.material
-    implementation deps.dagger.dagger
+
+    implementation deps.dagger.runtime
+    implementation deps.dagger.androidRuntime
     kapt deps.dagger.compiler
+    kapt deps.dagger.androidCompiler
+
     testImplementation deps.junit
     androidTestImplementation "androidx.test:runner:$versions.test_runner"
     androidTestImplementation "androidx.test.espresso:espresso-core:3.1.0"

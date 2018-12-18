@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.ursus.core.CallService
 import com.ursus.feature1.BarFragment
 import com.ursus.feature2.FooFragment
-import com.ursus.myapplication.di.AppComponent
+import dagger.android.AndroidInjection
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
-        (applicationContext as App).appComponent<AppComponent>().inject(this)
 
         Log.d("Default", "MainActivity # onCreate=$bar")
         setContentView(R.layout.activity_main)

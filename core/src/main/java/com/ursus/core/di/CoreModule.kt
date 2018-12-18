@@ -12,10 +12,11 @@ import javax.inject.Singleton
  * on 17.12.2018.
  */
 @Module
-class CoreModule {
-    @Singleton @Provides fun callManager(context: Context, notificationHelper: NotificationHelper) =
+object CoreModule {
+    @Singleton @Provides @JvmStatic
+    fun callManager(context: Context, notificationHelper: NotificationHelper) =
         CallManager(context, notificationHelper)
 
-    @Provides
+    @Provides @JvmStatic
     fun notificationHelper(context: Context) = NotificationHelper(context)
 }

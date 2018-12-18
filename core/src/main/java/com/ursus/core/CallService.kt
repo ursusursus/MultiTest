@@ -3,18 +3,18 @@ package com.ursus.core
 import android.app.Service
 import android.content.Intent
 import android.util.Log
-import com.ursus.core.di.AppComponent
-import com.ursus.core.di.AppComponentProvider
+import dagger.android.AndroidInjection
+import javax.inject.Inject
 
 /**
  * Created by Vlastimil Brečka (www.vlastimilbrecka.sk)
  * on 15.12.2018.
  */
 class CallService : Service() {
-    private lateinit var notifHelper: NotificationHelper
-
+    @Inject lateinit var notifHelper: NotificationHelper
 
     override fun onCreate() {
+        AndroidInjection.inject(this)
         super.onCreate()
         Log.d("Default", "CallService # onCreate")
         foo()
@@ -23,7 +23,8 @@ class CallService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         if (intent != null) {
             when (intent.action) {
-                ACTION_START -> {}
+                ACTION_START -> {
+                }
                 ACTION_STOP -> stopSelf()
             }
         }
@@ -32,7 +33,6 @@ class CallService : Service() {
 
     private fun foo() {
         Log.d("Default", "foo")
-        notifHelper = (application as AppComponentProvider).appComponent<AppComponent>().notifHelper
         startForeground(notifHelper.callNotificationId(), notifHelper.immediateForegroundCallNotification().apply {
             Log.d("Default", "notifying immediate")
         })

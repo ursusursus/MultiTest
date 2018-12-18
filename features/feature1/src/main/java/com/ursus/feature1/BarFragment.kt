@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.ursus.core.di.AppComponentProvider
+import com.ursus.core.CallManager
 import com.ursus.feature1.databinding.FragmentBarBinding
+import dagger.android.support.AndroidSupportInjection
+import javax.inject.Inject
 
 /**
  * Created by Vlastimil Brečka (www.vlastimilbrecka.sk)
@@ -14,12 +16,13 @@ import com.ursus.feature1.databinding.FragmentBarBinding
  */
 class BarFragment : Fragment() {
 
+    @Inject lateinit var callManager: CallManager
+
     private var binding: FragmentBarBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidSupportInjection.inject(this)
         super.onCreate(savedInstanceState)
-        val appComponent = (context!!.applicationContext as AppComponentProvider).appComponent<com.ursus.sharedlib1.di.AppComponent>()
-        appComponent.callManager
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

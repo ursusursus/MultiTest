@@ -31,8 +31,11 @@ dependencies {
     implementation deps.appcompat
     implementation deps.material
 
-    implementation deps.dagger.dagger
+    implementation deps.dagger.runtime
+    implementation deps.dagger.androidRuntime
+    implementation deps.dagger.androidSupportRuntime
     kapt deps.dagger.compiler
+    kapt deps.dagger.androidCompiler
 
     implementation "com.jakewharton.rxrelay2:rxrelay:2.1.0"
     implementation "io.reactivex.rxjava2:rxjava:2.2.4"

@@ -9,6 +9,7 @@ import dagger.Provides
  * on 17.12.2018.
  */
 @Module
-class AppModule {
-    @Provides fun bar(): Bar = Bar(1)
+object AppModule {
+    @Provides @JvmStatic
+    fun bar(): Bar = Bar(1)
 }
