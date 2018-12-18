@@ -9,7 +9,9 @@ import android.util.Log
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.ursus.core.CallManager
 import com.ursus.core.CallService
+import com.ursus.core.NotificationHelper
 import com.ursus.feature1.BarFragment
 import com.ursus.feature2.FooFragment
 import dagger.android.AndroidInjection
@@ -17,6 +19,8 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
+    @Inject lateinit var notifHelper: NotificationHelper
+    @Inject lateinit var callManager: CallManager
     @Inject lateinit var bar: Bar
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -45,20 +49,21 @@ class MainActivity : AppCompatActivity() {
                 .commit()
         }
 
-//        (applicationContext as App).appComponent<AppComponent>().notifHelper.showMissedCallNotification()
+        notifHelper.showMissedCallNotification()
 
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//            Log.d("Default", "starting service")
-//            startForegroundService(Intent(this, CallService::class.java).apply {
-//                action = CallService.ACTION_START
-//            })
-//        } else {
-//            startService(Intent(this, CallService::class.java))
-//        }
-        Log.d("Default", "stopping service")
-        startForegroundService(Intent(this, CallService::class.java).apply {
-            action = CallService.ACTION_STOP
-        })
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Log.d("Default", "starting service")
+            startForegroundService(Intent(this, CallService::class.java).apply {
+                action = CallService.ACTION_START
+            })
+        } else {
+            startService(Intent(this, CallService::class.java))
+        }
+//        Log.d("Default", "stopping service")
+//        startForegroundService(Intent(this, CallService::class.java).apply {
+//            action = CallService.ACTION_STOP
+//        })
+        Log.d("Default", "barFragment # callManager=$callManager")
     }
 
     override fun onStart() {

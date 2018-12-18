@@ -1,12 +1,14 @@
 package com.ursus.feature1
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.ursus.core.CallManager
 import com.ursus.feature1.databinding.FragmentBarBinding
+import com.ursus.sharedlib1.FooManager
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -17,12 +19,15 @@ import javax.inject.Inject
 class BarFragment : Fragment() {
 
     @Inject lateinit var callManager: CallManager
+    @Inject lateinit var fooManager: FooManager
 
     private var binding: FragmentBarBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidSupportInjection.inject(this)
         super.onCreate(savedInstanceState)
+        Log.d("Default", "barFragment # callManager=$callManager")
+        Log.d("Default", "barFragment # fooManager=$fooManager")
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

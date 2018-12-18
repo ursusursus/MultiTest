@@ -9,6 +9,7 @@ import dagger.Provides
  * on 17.12.2018.
  */
 @Module
-class BarModule {
-    @Provides fun quax() = Quax()
+object BarModule {
+    @Provides @JvmStatic
+    fun quax() = Quax()
 }
